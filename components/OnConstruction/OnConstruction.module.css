@@ -8,5 +8,5 @@
     @apply bg-primary text-white text-center transition-colors duration-700 transform text-lg rounded-lg px-8 py-3 m-3 w-full;
 }
 .button-outlined{
-    @apply rounded bg-transparent border-[1px]  border-primary text-white text-center transition-colors duration-700 transform text-lg px-8 py-3 m-3 w-full flex items-center mx-auto;
+    @apply rounded bg-transparent border-[1px]  border-primary text-white text-center transition-colors duration-700 transform text-lg px-8 py-3 m-3 w-full flex items-center mx-auto items-center;
 }
