@@ -1,0 +1,10 @@
+.overlay-search{
+    @apply min-w-full h-full bg-black-100 z-20 fixed overflow-hidden inset-0 px-[32px] lg:px-[64px] py-[24px] outline-none;
+}
+.form{
+    @apply flex;
+}
+.search-results{
+    @apply flex flex-col bg-black-300 rounded-b-md text-white px-[60px] py-2;
+    width: calc(100% - (48px))
+}

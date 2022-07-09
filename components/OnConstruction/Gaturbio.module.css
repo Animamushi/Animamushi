@@ -1,0 +1,36 @@
+.paw-r, .paw-l, .eye-l, .eye-r {
+    transform-origin: bottom;
+    transform-box: view-box;
+}
+
+.paw-l{
+     animation: lpawnMove 0.8s infinite;
+    animation-direction:normal;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-out; 
+}
+@keyframes lpawnMove{
+    0%{ 
+     transform:translateY(3%) rotate(-5.25deg);
+    }
+    100%{ 
+        transform:translateY(-12%) rotate(-2.36deg) 
+    }
+}
+.paw-r{
+    animation: rpawnMove 0.8s infinite;
+    animation-direction:reverse;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes rpawnMove{
+    0%{ transform:translateY(2%) rotate(-1.0deg)}
+    /* 50%{transform:translateY(5%) rotate(2.38deg)} */
+    100%{ 
+        transform:translateY(10%) rotate(2.38deg);
+    }
+}
+
+.eye-r{}
+.eye-l{}

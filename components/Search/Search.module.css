@@ -1,0 +1,9 @@
+.search-navigation{
+
+}
+.icon-search {
+    cursor: pointer;
+}
+.icon-search > *{
+    @apply fill-gray-300;
+}

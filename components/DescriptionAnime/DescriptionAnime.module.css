@@ -1,0 +1,20 @@
+.description{
+    @apply flex flex-col items-start text-white px-[32px] gap-[32px];
+
+}
+.description-text{
+    @apply max-h-[38px] overflow-hidden leading-[19px] text-ellipsis;
+}
+.info{
+    @apply flex flex-col items-start md:flex-row flex-wrap md:justify-center md:align-middle gap-8 w-full;
+
+}
+.tipo{
+    @apply flex flex-col justify-center items-start align-middle md:items-center;
+}
+.info-title{
+    @apply text-gray-100;
+}
+.info-text{
+    @apply text-gray-200;
+}

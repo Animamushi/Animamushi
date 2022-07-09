@@ -1,0 +1,12 @@
+.nav{
+    @apply bg-gradient-to-b from-black-100 to-transparent fixed z-[1] w-full;
+}
+.container-nav{
+    @apply flex justify-between items-center px-8 py-4 md:mx-auto md:justify-center;
+}
+.list-menu{
+    @apply items-center justify-between hidden md:flex  md:flex-row;
+}
+.link-menu{
+    @apply text-gray-300 p-4  hover:underline
+}

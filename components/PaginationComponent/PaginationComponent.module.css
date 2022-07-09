@@ -1,0 +1,3 @@
+.pagination-component{
+    @apply flex px-8 w-full;
+}

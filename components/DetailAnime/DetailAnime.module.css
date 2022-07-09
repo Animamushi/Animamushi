@@ -1,0 +1,18 @@
+.anime-detail{
+     @apply relative flex flex-col overflow-hidden;
+}
+.poster-image{
+    @apply object-cover w-full h-full;
+}
+.info{
+    @apply absolute bottom-[10%] w-full md:max-w-xl flex flex-col items-center md:items-baseline px-8 text-left mb-4 justify-between gap-4 text-white
+}
+.buttons-container{
+    @apply flex flex-col md:flex-row md:items-start items-center pb-8 w-full;
+}
+.button{
+    @apply bg-primary text-white text-center transition-colors duration-700 transform text-lg rounded-lg px-8 py-3 m-3;
+}
+.button-outlined{
+    @apply rounded bg-transparent border-[1px]  border-primary text-white text-center transition-colors duration-700 transform text-lg px-8 py-3 m-3 w-[173.33px]
+}

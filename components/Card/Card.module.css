@@ -1,0 +1,3 @@
+.card{
+    @apply relative min-w-[311px] max-w-xs  overflow-hidden;
+}

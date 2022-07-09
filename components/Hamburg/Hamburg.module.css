@@ -1,0 +1,60 @@
+.menu{
+    @apply z-[2];
+}
+.menu-icon{
+    @apply md:hidden hover:cursor-pointer;
+}
+.icon{
+    @apply my-2 ;
+    transform-box: view-box;
+    transition-timing-function: cubic-bezier(0.4, -0.54, 0.56, 1.45);
+}
+.open .icon-top{
+    transition: transform 400ms;
+    transition-delay: 100ms;
+    transform-origin: 87% 35%;
+    transform: rotate(-45deg);
+}
+.open .icon-middle{
+    transition: transform 200ms;
+    transition-delay: 50ms;
+    transform-origin: 50% 40%;
+    transform: scale(0.1, 1);
+}
+.open .icon-bottom{
+    transition: transform 400ms;
+    transition-delay: 100ms;
+    transform-origin: 80% 70%;
+    transform: rotate(45deg);
+}
+
+.close .icon-top{
+    transition: transform 400ms;
+    transition-delay: 100ms;
+    transform-origin: 87% 35%;
+    transform: rotate(0deg);
+}
+.close .icon-middle{
+    transition: transform 200ms;
+    transition-delay: 200ms;
+    transform-origin: 50% 40%;
+    transform: scale(1, 1);
+}
+.close .icon-bottom{
+    transition: transform 400ms;
+    transition-delay: 100ms;
+    transform-origin: 80% 70%;
+    transform: rotate(0deg);
+}
+.icon-top, .icon-middle, .icon-bottom{
+    @apply fill-gray-300
+}
+
+/* MenuOverlay */
+
+.open-overlay{
+    @apply  translate-x-0 transition-all duration-300 delay-100;
+}
+.close-overlay{
+    @apply  translate-x-[-100%] transition-all duration-300 ease-out delay-100;
+} 

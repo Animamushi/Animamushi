@@ -1,0 +1,12 @@
+.on-construction{
+    @apply flex flex-col gap-2 items-center px-8 md:gap-[64px];
+}
+.title{
+    @apply font-rock text-xl md:text-[32px] md:leading-[50px];
+}
+.button{
+    @apply bg-primary text-white text-center transition-colors duration-700 transform text-lg rounded-lg px-8 py-3 m-3 w-full;
+}
+.button-outlined{
+    @apply rounded bg-transparent border-[1px]  border-primary text-white text-center transition-colors duration-700 transform text-lg px-8 py-3 m-3 w-full flex items-center mx-auto;
+}

@@ -1,0 +1,18 @@
+.pagination-capitules{
+    @apply flex flex-col;
+}
+.pagination{
+    @apply flex flex-row flex-wrap bg-black-200 text-white;
+ }
+.item{
+    @apply flex flex-row gap-2 justify-center align-middle p-2 bg-black-200 items-center cursor-pointer text-center;
+}
+.current .chank{
+    @apply bg-gray-100;
+}
+.notCurrent .chank{
+    @apply bg-black-300;
+}
+.chank{
+    @apply flex flex-row justify-center items-center p-2 border border-gray-100 rounded;
+}

@@ -1,0 +1,29 @@
+.principal-card{
+    @apply relative w-screen h-screen;
+}
+
+.background-mask{
+    @apply bg-gradient-to-r from-black-100 w-full h-full absolute;
+}
+
+.poster-image{
+    @apply object-cover w-full h-full;
+}
+.info{
+    @apply container px-8 absolute bottom-0 w-full md:max-w-xl flex flex-col items-baseline;
+}
+
+.title{
+    @apply text-white text-3xl  font-rock mb-3 text-left leading-[50px] md:text-4xl md:leading-[60px] max-h-[100px] overflow-hidden;
+}
+.description{
+    @apply text-white text-lg md:text-2xl max-h-20 md:max-h-40 leading-5  text-ellipsis overflow-hidden text-left mb-3;
+}
+
+.episode{
+    @apply text-white text-xl mb-3 text-left;
+}
+
+.buttons-container{
+    @apply flex flex-col md:flex-row md:items-start items-center justify-evenly pb-8 w-full;
+}
