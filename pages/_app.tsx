@@ -5,7 +5,7 @@ import Layout from '@components/Layout/Layout';
 import AppContext from '@context/AppContext';
 import useInitialState from '@hooks/useInitialState';
 import Navbar from '../components/Navbar/Navbar';
-import OnConstruction from '@components/OnConstruction/OnConstruction'
+
 import '@styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -25,21 +25,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            {
-                process.env.maintenance ?
-                    <OnConstruction /> :
-                    <>
-                        <Navbar />
-                        <Head>
-                            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                        </Head>
-                        <AppContext.Provider value={{}}>
-                            <Layout>
-                                <Component {...pageProps} />
-                            </Layout>
-                        </AppContext.Provider>
-                    </>
-            }
+            <Navbar />
+            <Head>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <AppContext.Provider value={{}}>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </AppContext.Provider>
         </>
     )
 }

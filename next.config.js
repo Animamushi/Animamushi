@@ -1,5 +1,5 @@
 module.exports = {
     env: {
-        maintenance: true,
+        maintenance: false,
     },
 }

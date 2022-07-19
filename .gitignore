@@ -106,3 +106,6 @@ dist
 #dist
 dist/
 .vscode/settings.json
+
+#next config
+next.config.js
