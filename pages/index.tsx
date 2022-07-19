@@ -1,24 +1,13 @@
-import { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import AppContext from '@context/AppContext'
 import PrincipalCard from '@components/PrincipalCard/PrincipalCard'
 import ListOfCards from '@components/ListOfCards/ListOfCards'
 
 const Home: NextPage = () => {
+    const Context: any = useContext(AppContext);
 
-    const context = useContext(AppContext);
-
-    const ComponentsHomeWithContext = (context: any) => {
-        const { state: { animeList } } = context ?? {}
-        const useFirstAnime = animeList[0];
-        return (
-            <>
-                <PrincipalCard {...useFirstAnime} />
-                <ListOfCards AnimeList={animeList} />
-            </>
-        )
-    }
     return (
         <>
             <Head>
@@ -26,7 +15,11 @@ const Home: NextPage = () => {
             </Head>
             <div className="relative block overflow-x-hidden">
                 {
-                    ComponentsHomeWithContext(context)
+                    Context.state.animeList ?
+                        <>
+                            <PrincipalCard {...Context.state.animeSelected} />
+                            <ListOfCards AnimeList={Context.state.animeList} />
+                        </> : <></>
                 }
             </div>
         </>

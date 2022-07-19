@@ -5,7 +5,7 @@ function useGetAnimeById(id: number | string) {
     const [episodes, setepisodes] = useState({});
     useEffect(() => {
         async function fetchData() {
-            const response: Response = await fetch(`https://kitsu.io/api/edge/anime/${id}`, {
+            const response: Response = await fetch(`${process.env.API_ANIME}/${id}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/vnd.api+json' }
             });

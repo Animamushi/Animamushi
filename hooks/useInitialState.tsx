@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 
-function useInitialState() {
-    const [initialState, setinitialState] = useState({});
+function useInitialState(API: string) {
+    const [initialState, setinitialState] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const response: Response = await fetch("https://kitsu.io/api/edge/trending/anime?page[limit]=10&page[offset]=0", {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/vnd.api+json' }
-            });
+
+            const response: Response = await fetch(API);
 
             const { data, errors } = await response.json();
             if (response.ok) {

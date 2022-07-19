@@ -53,5 +53,6 @@ type AnimamushiState = {
 interface AnimamushiContext {
     state: AnimamushiState,
     setanimeSelected: () => void,
-    setEpisodes: () => void
+    setEpisodes: () => void,
+    setAnimeList: (al: any) => void
 }
