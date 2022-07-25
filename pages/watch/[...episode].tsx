@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Player from '@components/Player/Player';
 import React from 'react'
 
 type Props = {}
@@ -31,6 +32,7 @@ const Watch = (props: Props) => {
                 {/* <video controls muted autoPlay crossOrigin="anonymous">
                     <source src="http://localhost:3600/api/v1/watch/video" type="video/mp4" />
                 </video> */}
+                <Player />
             </div>
         </div>
     )
