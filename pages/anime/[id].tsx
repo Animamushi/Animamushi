@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import { ParsedUrlQuery } from 'querystring';
 import DetailAnime from "@components/DetailAnime/DetailAnime"
 import CapitulesFilter from '@components/CapitulesFilter/CapitulesFilter';
@@ -14,15 +14,15 @@ type props = {
     episodesData: Partial<Episode>[]
 }
 //const context = useContext(AppContext);
-export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+/* export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
 
     return {
         paths: [], //indicates that no page needs be created at build time
         fallback: 'blocking' //indicates the type of fallback
     }
-}
+} */
 // This also gets called at build time
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     const getAnimeData = async (params: ParsedUrlQuery | undefined) => {
         const { id } = params ?? {};
         const response: Response = await fetch(`https://kitsu.io/api/edge/anime/${id}`, {
@@ -62,16 +62,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Anime: NextPage<props> = ({ animeData, episodesData }: props) => {
     const context: any = useContext(AppContext);
     useEffect(() => {
+
         if (Object.entries(context).length > 0) {
             context?.setanimeSelected?.(animeData);
             context?.setEpisodes?.(episodesData);
         }
-    }, [context.state.episodes, context.state.animeSelected]);
+    }, [context.state.animeSelected]);
 
     return (
         <div className={styles.anime}>
             {
-                Object.entries(context.state.episodes).length > 0 && Object.entries(context.state.animeSelected).length > 0 ?
+                Object.entries(context.state.episodes).length > 0 ?
                     <>
                         <DetailAnime animeData={animeData} />
                         <DescriptionAnime animeData={animeData} />

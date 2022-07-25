@@ -1,17 +1,20 @@
 import Hamburg from '@components/Hamburg/Hamburg';
 import Logo from '@components/Logo/Logo';
 import Search from '@components/Search/Search';
+import AppContext from '@context/AppContext';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
     const [visible, setVisible] = useState(true);
+    const context: any = useContext(AppContext);
     const router = useRouter();
     useEffect(() => {
         if (router.asPath.includes('/watch/')) {
             setVisible(false);
+            console.log(context)
         }
         console.log(router);
     }, [visible])

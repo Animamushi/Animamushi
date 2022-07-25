@@ -17,12 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     const [animeSelected, setanimeSelected] = useState({})
     const [animeList, setAnimeList] = useState({})
     const [episodes, setEpisodes] = useState({})
+    const [navigation, setNavigation] = useState(true);
 
     useEffect(() => {
         if (initialState) {
             setAnimeList(initialState);
             const firstItem: any = initialState?.filter((x: any) => typeof x !== undefined).shift();
             setanimeSelected(firstItem);
+            localStorage.setItem('initial', JSON.stringify(initialState));
         }
     }, [initialState])
 
@@ -30,11 +32,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         state: {
             animeList,
             animeSelected,
-            episodes
+            episodes,
+            navigation
         },
         setAnimeList,
         setanimeSelected,
-        setEpisodes
+        setEpisodes,
+        setNavigation
     }
 
     return (
