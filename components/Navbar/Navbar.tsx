@@ -15,9 +15,11 @@ const Navbar = () => {
         if (router.asPath.includes('/watch/')) {
             setVisible(false);
             console.log(context)
+            console.log(router);
+        } else {
+            setVisible(true)
         }
-        console.log(router);
-    }, [visible])
+    }, [router, visible])
 
     return (
         <nav className={styles.nav}>
