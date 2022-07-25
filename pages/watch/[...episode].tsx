@@ -1,6 +1,6 @@
+import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Player from '@components/Player/Player';
-import React from 'react'
 
 type Props = {}
 //const context = useContext(AppContext);
@@ -14,11 +14,18 @@ export const getStaticPaths: GetStaticPaths<{ episode: string }> = async () => {
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     console.log(params)
-
-
+    const { episode } = params ?? {}
+    let id, capitule;
+    if (params !== undefined && Object.entries(params).length > 0 && episode) {
+        id = episode[0];
+        capitule = episode[1];
+    }
     //console.log(episodesData);
     const props = {
-        props: {}
+        props: {
+            id,
+            capitule
+        }
     }
 
     // Pass post data to the page via props
@@ -26,6 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const Watch = (props: Props) => {
+    console.log(props);
     return (
         <div>
             <div className="player">
