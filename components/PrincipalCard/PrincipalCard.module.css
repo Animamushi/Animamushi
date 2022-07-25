@@ -14,7 +14,7 @@
 }
 
 .title{
-    @apply text-white text-3xl  font-rock mb-3 text-left leading-[50px] md:text-4xl md:leading-[60px] max-h-[100px] overflow-hidden;
+    @apply text-white text-3xl  font-rock mb-3 text-left leading-[60px] md:text-4xl md:leading-[3.5rem]  max-h-[100px] overflow-hidden;
 }
 .description{
     @apply text-white text-lg md:text-2xl max-h-20 md:max-h-40 leading-5  text-ellipsis overflow-hidden text-left mb-3;
