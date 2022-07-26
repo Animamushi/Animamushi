@@ -1,6 +1,6 @@
 import { Suspense, useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-// /import ReactPlayer from 'react-player'
+import Loader, { LoaderScreen } from '@components/Loader/Loader'
 
 const DynamicPlayer = dynamic(() => import('react-player'), { suspense: true, ssr: false });
 
@@ -14,7 +14,7 @@ const Player = () => {
         return null;
     }
     return (
-        <Suspense fallback={`Loading...`}>
+        <Suspense fallback={<LoaderScreen><Loader /></LoaderScreen>}>
             <DynamicPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
         </Suspense>
     )
