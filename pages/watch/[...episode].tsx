@@ -28,10 +28,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 const Watch = (props: Props) => {
     console.log(props);
     return (
-        <div>
-            <div className="player">
-                <Player />
-            </div>
+        <div className="player">
+            <Player />
         </div>
     )
 }

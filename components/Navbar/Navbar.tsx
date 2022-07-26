@@ -14,8 +14,6 @@ const Navbar = () => {
     useEffect(() => {
         if (router.asPath.includes('/watch/')) {
             setVisible(false);
-            console.log(context)
-            console.log(router);
         } else {
             setVisible(true)
         }
