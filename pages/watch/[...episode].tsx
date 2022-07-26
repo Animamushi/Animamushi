@@ -1,4 +1,3 @@
-import React from 'react'
 import { GetServerSideProps } from 'next'
 import Player from '@components/Player/Player'
 type Props = {}
@@ -8,17 +7,19 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
     const { episode } = params ?? {}
     let id, capitule;
-
-    if (params !== undefined && Object.entries(params).length > 0 && episode) {
-        id = episode[0];
-        capitule = episode[1];
+    if (episode?.length !== undefined && episode?.length <= 2) {
+        console.log(episode)
+        console.log(episode?.length)
     }
+
+    /* 
+        if (params !== undefined && Object.entries(params).length === 1 && episode) {
+            id = episode[0];
+            capitule = episode[1];
+        } */
     //console.log(episodesData);
     const props = {
-        props: {
-            id,
-            capitule
-        }
+        props: {}
     }
 
     // Pass post data to the page via props
@@ -26,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 }
 
 const Watch = (props: Props) => {
-    console.log(props);
+    //console.log(props);
     return (
         <div className="player">
             <Player />
